@@ -6,7 +6,7 @@
 #    By: sselusa <sselusa@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/06 22:34:04 by sselusa           #+#    #+#              #
-#    Updated: 2019/12/17 23:14:47 by sselusa          ###   ########.fr        #
+#    Updated: 2019/12/18 20:12:47 by sselusa          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ SO_FLAGS = -shared -fPIC
 #		RULES        ------------------------------------  #
 #	-----------------------------------------------------  #
 
-.PHONY: all clean fclean re so bin lib
+.PHONY: all clean fclean re so bin
 
 all:
 	@$(MAKE) -s $(LIB_DIR)/$(LIB)
