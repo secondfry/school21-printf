@@ -6,7 +6,7 @@
 /*   By: oadhesiv <oadhesiv@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 20:50:02 by oadhesiv          #+#    #+#             */
-/*   Updated: 2019/12/18 21:55:44 by oadhesiv         ###   ########.fr       */
+/*   Updated: 2019/12/18 22:59:54 by oadhesiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_field				*create_field(
 	ret->fmt = format;
 	ret->str = NULL;
 	ret->arg = NULL;
+	ret->position = g_position++;
 	return (ret);
 }
 
