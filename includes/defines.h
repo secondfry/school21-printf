@@ -6,7 +6,7 @@
 /*   By: oadhesiv <oadhesiv@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 20:25:48 by oadhesiv          #+#    #+#             */
-/*   Updated: 2019/12/18 22:59:24 by oadhesiv         ###   ########.fr       */
+/*   Updated: 2019/12/18 23:14:02 by oadhesiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct		s_field
 	char			*str;
 	size_t			len;
 	void			*arg;
-	size_t			position;
+	size_t			pos;
 	short			conv;
 	short			flags;
 }					t_field;

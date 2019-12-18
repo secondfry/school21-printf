@@ -6,7 +6,7 @@
 /*   By: oadhesiv <oadhesiv@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 20:16:16 by oadhesiv          #+#    #+#             */
-/*   Updated: 2019/12/18 21:56:05 by oadhesiv         ###   ########.fr       */
+/*   Updated: 2019/12/18 23:14:25 by oadhesiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ t_field				*parse_field(char **format)
 	ret = create_field(str);
 	check(ret, "[parse_plain] ret ENOMEM");
 	process_field(ret);
+	if (ret->pos == 0)
+		ret->pos = g_pos++;
 	*format += len;
 	return (ret);
 }
