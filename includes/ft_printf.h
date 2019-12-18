@@ -29,6 +29,45 @@
 
 /*
 **	-----------------------------------------------------  **
+**		CONVERSIONS  ------------------------------------  **
+**	-----------------------------------------------------  **
+*/
+
+# define C_PERCENT		(1 << 0)
+# define C_CHAR			(1 << 1)
+# define C_INTD			(1 << 2)
+# define C_FLOAT		(1 << 3)
+# define C_INTI			(1 << 4)
+# define C_OCTAL		(1 << 5)
+# define C_POINTER		(1 << 6)
+# define C_STRING		(1 << 7)
+# define C_UINT			(1 << 8)
+# define C_LOWHEX		(1 << 9)
+# define C_UPHEX		(1 << 10)
+# define C_LOWFHEX		(1 << 11)
+
+/*
+**	-----------------------------------------------------  **
+**		FLAGS        ------------------------------------  **
+**	-----------------------------------------------------  **
+*/
+
+# define F_MINUS		(1 << 0)
+# define F_PLUS			(1 << 1)
+# define F_SPACE		(1 << 2)
+# define F_SHARP		(1 << 3)
+# define F_ZERO			(1 << 4)
+# define F_PRECISION	(1 << 5)
+# define F_LONG			(1 << 6)
+# define F_TOCHAR		(1 << 7)
+# define F_TOSHORT		(1 << 8)
+# define F_LONGLONG		(1 << 9)
+# define F_SIZET		(1 << 10)
+# define F_LONGF		(1 << 11)
+# define F_STAR			(1 << 12)
+
+/*
+**	-----------------------------------------------------  **
 **		TEXT COLORS  ------------------------------------  **
 **	-----------------------------------------------------  **
 */
