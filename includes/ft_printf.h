@@ -6,7 +6,7 @@
 /*   By: sselusa <sselusa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/17 22:48:39 by sselusa           #+#    #+#             */
-/*   Updated: 2019/12/17 22:52:52 by sselusa          ###   ########.fr       */
+/*   Updated: 2019/12/18 23:19:43 by sselusa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,23 +33,65 @@
 **	-----------------------------------------------------  **
 */
 
+/*
+**	%%			C_PERCENT		Literal '%' char
+**	%c			C_CHAR			Char
+**	%i / %d		C_INT			Int in decimal
+**	%f			C_LOWFLOAT		Lowercase double in decimal
+**	%F			C_UPFLOAT		Uppercase double in decimal
+**	%n			C_WRTLEN		Successfully written chars into an int param
+**	%o			C_OCTAL			Unsigned int in octal
+**	%p			C_POINTER		Pointer
+**	%s			C_STRING		String
+**	%u			C_UINT			Unsigned int in decimal
+**	%x			C_LOWHEX		Lowercase unsigned int in hexadecimal
+**	%X			C_UPHEX			Uppercase unsigned int in hexadecimal
+**	%a			C_LOWFHEX		Lowercase double in hexadecimal
+**	%A			C_UPFHEX		Uppercase double in hexadecimal
+**	%e			C_LOWSCI		Lowercase double in scientific notation
+**	%E			C_UPSCI			Uppercase double in scientific notation
+*/
+
 # define C_PERCENT		(1 << 0)
 # define C_CHAR			(1 << 1)
-# define C_INTD			(1 << 2)
-# define C_FLOAT		(1 << 3)
-# define C_INTI			(1 << 4)
-# define C_OCTAL		(1 << 5)
-# define C_POINTER		(1 << 6)
-# define C_STRING		(1 << 7)
-# define C_UINT			(1 << 8)
-# define C_LOWHEX		(1 << 9)
-# define C_UPHEX		(1 << 10)
-# define C_LOWFHEX		(1 << 11)
+# define C_INT			(1 << 2)
+# define C_LOWFLOAT		(1 << 3)
+# define C_UPFLOAT		(1 << 4)
+# define C_WRTLEN		(1 << 5)
+# define C_OCTAL		(1 << 6)
+# define C_POINTER		(1 << 7)
+# define C_STRING		(1 << 8)
+# define C_UINT			(1 << 9)
+# define C_LOWHEX		(1 << 10)
+# define C_UPHEX		(1 << 11)
+# define C_LOWFHEX		(1 << 12)
+# define C_UPFHEX		(1 << 13)
+# define C_LOWSCI		(1 << 14)
+# define C_UPSCI		(1 << 15)
 
 /*
 **	-----------------------------------------------------  **
 **		FLAGS        ------------------------------------  **
 **	-----------------------------------------------------  **
+*/
+
+/*
+**	-			F_MINUS			Output left-align
+**	+			F_PLUS			Prepends + for positive signed numeric types
+**	 			F_SPACE			Prepends space for positive signed numeric types
+**	#			F_SHARP			Alternate form
+**	0			F_ZERO			Prepends 0 for numeric types if width specified
+**	.			F_PRECISION		Precision
+**	l			F_LONG			Long integer
+**	hh			F_TOCHAR		Force int or u_int cast to char or u_char
+**	h			F_TOSHORT		Force int or u_int cast to short or u_short
+**	ll			F_LONGLONG		Long long integer
+**	z			F_SIZET			Size_t
+**	L			F_LONGF			Long double
+**	*			F_STAR			Precision from params
+**	b			F_BINARY		Print in binary
+**	r			F_NONPRINT		Print non-printable characters
+**	$			F_WILDCARD		Get param with id from passed params
 */
 
 # define F_MINUS		(1 << 0)
@@ -65,6 +107,9 @@
 # define F_SIZET		(1 << 10)
 # define F_LONGF		(1 << 11)
 # define F_STAR			(1 << 12)
+# define F_BINARY		(1 << 13)
+# define F_NONPRINT		(1 << 14)
+# define F_WILDCARD		(1 << 15)
 
 /*
 **	-----------------------------------------------------  **
