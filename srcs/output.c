@@ -23,7 +23,7 @@ void				output(char **ret, size_t *len)
 	while (cur)
 	{
 		tmp = ft_strjoin(ret, ((t_field*)cur->content)->str);
-		check(temp, "[output] tmp ENOMEM");
+		check(tmp, "[output] tmp ENOMEM");
 		ft_strdel(&ret);
 		ret = tmp;
 		cur = cur->next;

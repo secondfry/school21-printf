@@ -41,3 +41,13 @@ t_output			*create_output(void)
 	ret->len = 0;
 	return (ret);
 }
+
+t_options			*create_options(void)
+{
+	t_options		*ret;
+
+	if (!(ret = ft_memalloc(sizeof(t_options))))
+		return (NULL);
+	ret->pos = 1;
+	return (ret);
+}

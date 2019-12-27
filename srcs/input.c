@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "defines.h"
 #include "input.h"
 
 void				input(char **format)
@@ -67,4 +68,9 @@ t_field				*parse_field(char **format)
 		ret->pos = g_pos++;
 	*format += len;
 	return (ret);
+}
+
+void				process_field(t_field *ret)
+{
+	return ;
 }

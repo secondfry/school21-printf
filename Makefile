@@ -31,7 +31,7 @@ LIB_DIR = ./ft_libft
 LIB_INCL_DIR = $(LIB_DIR)/includes
 OBJS_DIR = ./objects
 
-ALL_SRCS = ft_printf.c
+ALL_SRCS = ft_printf.c gc.c init.c input.c output.c
 
 SRCS = $(addprefix $(SRCS_DIR)/, $(ALL_SRCS))
 OBJS = $(patsubst $(SRCS_DIR)/%.c,$(OBJS_DIR)/%.o, $(SRCS))

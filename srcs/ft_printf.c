@@ -10,6 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+#include "defines.h"
+#include "init.h"
+#include "input.h"
 #include "ft_printf.h"
 
 int					ft_printf(const char *format, ...)
@@ -20,8 +24,13 @@ int					ft_printf(const char *format, ...)
 	int				ret_len;
 	char			*ret_str;
 
-	dummy = creare_field("");
+	dummy = create_field("");
+	check_simple((void*)dummy, "[ft_printf] dummy ENOMEM");
 	g_head = ft_lstnew((void*)dummy, sizeof(t_field));
+	check_simple((void*)g_head, "[ft_printf] g_head ENOMEM");
+	g_pos = ft_memalloc(sizeof(size_t));
+	check((void*)g_pos, "[ft_printf] g_pos ENOMEM");
+	*g_pos = 1;
 	cur = format;
 	input((char**)&cur);
 	ret_str = ft_strnew(0);

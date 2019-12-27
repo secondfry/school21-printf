@@ -22,12 +22,17 @@
 /*
 **	Checks `ptr` and calls `error` with `msg` if something is wrong.
 */
+void				check_simple(void *ptr, const char *msg);
+
+/*
+**	Checks `ptr` and calls `error` with `msg` if something is wrong.
+*/
 void				check(void *ptr, const char *msg);
 
 /*
 **	Prints error `msg`, cleanups and exits with error `code`.
 */
-void				error(int code, const char *msg);
+void				error(int code, const char *msg, char cleanup);
 
 /*
 **	Clears entire g_head.

@@ -13,17 +13,25 @@
 #include "defines.h"
 #include "gc.h"
 
+void				check_simple(void *ptr, const char *msg)
+{
+	if (ptr)
+		return ;
+	error(ENOMEM, msg, 0);
+}
+
 void				check(void *ptr, const char *msg)
 {
 	if (ptr)
 		return ;
-	error(ENOMEM, msg);
+	error(ENOMEM, msg, 1);
 }
 
-void				error(int code, const char *msg)
+void				error(int code, const char *msg, char clean)
 {
 	ft_putendl_fd(2, msg);
-	cleanup();
+	if (clean == 1)
+		cleanup();
 	exit(code);
 }
 
