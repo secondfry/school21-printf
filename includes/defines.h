@@ -28,9 +28,6 @@
 **	------------------------------------------------------------------------  **
 */
 
-t_list				*g_head;
-size_t				*g_pos;
-
 typedef struct		s_field
 {
 	char			*fmt;
@@ -53,6 +50,9 @@ typedef struct		s_options
 	t_list			*head;
 	size_t			pos;
 }					t_options;
+
+t_list				*g_head;
+size_t				*g_pos;
 
 # define ENOMEM		12
 

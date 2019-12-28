@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "defines.h"
+#include "gc.h"
 #include "output.h"
 
 void				output(char **ret, size_t *len)
@@ -22,10 +24,10 @@ void				output(char **ret, size_t *len)
 	cur = g_head;
 	while (cur)
 	{
-		tmp = ft_strjoin(ret, ((t_field*)cur->content)->str);
+		tmp = ft_strjoin(*ret, ((t_field*)cur->content)->str);
 		check(tmp, "[output] tmp ENOMEM");
-		ft_strdel(&ret);
-		ret = tmp;
+		ft_strdel(ret);
+		*ret = tmp;
 		cur = cur->next;
 	}
 }

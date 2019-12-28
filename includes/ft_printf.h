@@ -21,6 +21,11 @@
 
 # include <stdlib.h>
 # include "libft.h"
+# include "defines.h"
+# include "gc.h"
+# include "init.h"
+# include "input.h"
+# include "output.h"
 
 /*
 **	-----------------------------------------------------  **

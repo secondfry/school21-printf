@@ -40,6 +40,11 @@ void				error(int code, const char *msg, char cleanup);
 void				cleanup(void);
 
 /*
+**	Clears every pointer you give it. Noice.
+*/
+void				purge(void *ptr, ...);
+
+/*
 **	Clears list link.
 */
 void				free_field(void *content, size_t content_size);

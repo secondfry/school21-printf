@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdarg.h>
+#include <stdio.h>
 #include "defines.h"
 #include "gc.h"
 
@@ -29,7 +31,7 @@ void				check(void *ptr, const char *msg)
 
 void				error(int code, const char *msg, char clean)
 {
-	ft_putendl_fd(2, msg);
+	ft_putendl_fd(msg, 2);
 	if (clean == 1)
 		cleanup();
 	exit(code);
@@ -37,7 +39,23 @@ void				error(int code, const char *msg, char clean)
 
 void				cleanup(void)
 {
-	ft_lstdel(g_head, free_field);
+	ft_lstdel(&g_head, free_field);
+}
+
+void				purge(void *ptr, ...)
+{
+	va_list			ap;
+	void			*tmp;
+
+	ft_memdel(&ptr);
+	va_start(ap, ptr);
+	while (1) {
+		tmp = va_arg(ap, void *);
+		if (!tmp)
+			break;
+		ft_memdel(&tmp);
+	}
+	va_end(ap);
 }
 
 void				free_field(void *content, size_t content_size)
@@ -49,4 +67,5 @@ void				free_field(void *content, size_t content_size)
 	ft_memdel((void**)&(data->str));
 	ft_memdel((void**)&(data->arg));
 	ft_memdel((void**)&data);
+	content_size = 0;
 }

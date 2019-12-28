@@ -47,7 +47,7 @@ CFLAGS = -Wall -Werror -Wextra
 DFLAGS = -MMD -MP
 IFLAGS = -I $(INCL_DIR) -I $(LIB_INCL_DIR)
 LFLAGS = -L $(LIB_DIR) -lft
-DEBUG = -g -pg -fsanitize=address
+DEBUG = -g -pg
 SO_FLAGS = -shared -fPIC
 
 #	-----------------------------------------------------  #
@@ -78,6 +78,9 @@ $(LIB_DIR)/$(LIB):
 
 bin: $(LIB_DIR)/$(LIB)
 	$(CC) $(CFLAGS) -o $(BINARY) $(IFLAGS) $(LFLAGS) $(DEBUG) $(SRCS) $(SRCS_DIR)/main.c
+
+sanic: $(LIB_DIR)/$(LIB)
+	$(CC) $(CFLAGS) -o $(BINARY) $(IFLAGS) $(LFLAGS) $(DEBUG) $(SRCS) $(SRCS_DIR)/main.c -fsanitize=address
 
 so:
 	@$(MAKE) -s $(LIB_DIR)/$(LIB)
