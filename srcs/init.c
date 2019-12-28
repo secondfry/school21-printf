@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oadhesiv <oadhesiv@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: sselusa <sselusa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 20:50:02 by oadhesiv          #+#    #+#             */
-/*   Updated: 2019/12/18 23:14:16 by oadhesiv         ###   ########.fr       */
+/*   Updated: 2019/12/28 16:53:55 by sselusa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,13 @@ t_field				*create_field(
 	if (!(ret = ft_memalloc(sizeof(t_field))))
 		return (NULL);
 	ret->fmt = format;
+	ret->ptr = format;
 	ret->str = NULL;
 	ret->arg = NULL;
 	ret->len = 0;
 	ret->pos = 0;
+	ret->width = 0;
+	ret->precision = 0;
 	ret->conv = 0;
 	ret->flags = 0;
 	return (ret);

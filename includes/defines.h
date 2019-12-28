@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   defines.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oadhesiv <oadhesiv@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: sselusa <sselusa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 20:25:48 by oadhesiv          #+#    #+#             */
-/*   Updated: 2019/12/18 23:14:02 by oadhesiv         ###   ########.fr       */
+/*   Updated: 2019/12/28 16:54:03 by sselusa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,13 @@
 typedef struct		s_field
 {
 	char			*fmt;
+	char			*ptr;
 	char			*str;
 	size_t			len;
 	void			*arg;
 	size_t			pos;
+	size_t			width;
+	size_t			precision;
 	short			conv;
 	short			flags;
 }					t_field;
