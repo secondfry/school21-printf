@@ -10,10 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "ft_printf.h"
 
-int					main(int ac, char **av)
+int					main(void)
 {
-	av[0] = av[0];
-	return (ac);
+	printf("0123456789abcdef\n");
+	ft_printf("0123456789abcdef\n");
+	printf("%c %s %d %u\n", 'a', "bcdef", 0, 1);
+	ft_printf("%c %s %d %u\n", 'a', "bcdef", 0, 1);
+	return (0);
 }

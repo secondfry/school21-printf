@@ -31,7 +31,7 @@ LIB_DIR = ./ft_libft
 LIB_INCL_DIR = $(LIB_DIR)/includes
 OBJS_DIR = ./objects
 
-ALL_SRCS = ft_printf.c
+ALL_SRCS = ft_printf.c gc.c init.c input.c output.c
 
 SRCS = $(addprefix $(SRCS_DIR)/, $(ALL_SRCS))
 OBJS = $(patsubst $(SRCS_DIR)/%.c,$(OBJS_DIR)/%.o, $(SRCS))
@@ -47,7 +47,7 @@ CFLAGS = -Wall -Werror -Wextra
 DFLAGS = -MMD -MP
 IFLAGS = -I $(INCL_DIR) -I $(LIB_INCL_DIR)
 LFLAGS = -L $(LIB_DIR) -lft
-DEBUG = -g -pg -fsanitize=address
+DEBUG = -g -pg
 SO_FLAGS = -shared -fPIC
 
 #	-----------------------------------------------------  #
@@ -78,6 +78,9 @@ $(LIB_DIR)/$(LIB):
 
 bin: $(LIB_DIR)/$(LIB)
 	$(CC) $(CFLAGS) -o $(BINARY) $(IFLAGS) $(LFLAGS) $(DEBUG) $(SRCS) $(SRCS_DIR)/main.c
+
+sanic: $(LIB_DIR)/$(LIB)
+	$(CC) $(CFLAGS) -o $(BINARY) $(IFLAGS) $(LFLAGS) $(DEBUG) $(SRCS) $(SRCS_DIR)/main.c -fsanitize=address
 
 so:
 	@$(MAKE) -s $(LIB_DIR)/$(LIB)
