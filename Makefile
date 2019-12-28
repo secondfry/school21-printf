@@ -6,7 +6,7 @@
 #    By: sselusa <sselusa@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/06 22:34:04 by sselusa           #+#    #+#              #
-#    Updated: 2019/12/18 20:12:47 by sselusa          ###   ########.fr        #
+#    Updated: 2019/12/28 16:03:40 by sselusa          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ LIB_DIR = ./ft_libft
 LIB_INCL_DIR = $(LIB_DIR)/includes
 OBJS_DIR = ./objects
 
-ALL_SRCS = ft_printf.c gc.c init.c input.c output.c
+ALL_SRCS = ft_printf.c gc.c init.c input.c output.c bitflags.c
 
 SRCS = $(addprefix $(SRCS_DIR)/, $(ALL_SRCS))
 OBJS = $(patsubst $(SRCS_DIR)/%.c,$(OBJS_DIR)/%.o, $(SRCS))

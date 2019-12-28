@@ -1,25 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   input.h                                            :+:      :+:    :+:   */
+/*   bitflags.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sselusa <sselusa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/18 20:18:23 by oadhesiv          #+#    #+#             */
-/*   Updated: 2019/12/28 17:21:54 by sselusa          ###   ########.fr       */
+/*   Created: 2019/12/28 16:05:45 by sselusa           #+#    #+#             */
+/*   Updated: 2019/12/28 17:21:58 by sselusa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INPUT_H
-# define INPUT_H
-
-/*
-**	------------------------------------------------------------------------  **
-**		INCLUDES     -------------------------------------------------------  **
-**	------------------------------------------------------------------------  **
-*/
-
-# include "defines.h"
+#ifndef BITFLAGS_H
+# define BITFLAGS_H
 
 /*
 **	------------------------------------------------------------------------  **
@@ -27,13 +19,13 @@
 **	------------------------------------------------------------------------  **
 */
 
-/*
-**	Does something.
-*/
-void				input(char **format);
-t_field				*parse_plain(char **format);
-t_field				*parse_field(char **format);
 void				parse_format(t_field *fld);
-void				process_field(t_field *ret);
+
+void				parse_wildcard(t_field *fld);
+void				parse_flags(t_field *fld);
+void				parse_width(t_field *fld);
+void				parse_precision(t_field *fld);
+void				parse_length(t_field *fld);
+void				parse_conv(t_field *fld);
 
 #endif
