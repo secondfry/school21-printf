@@ -65,14 +65,18 @@ t_field				*parse_field(char **format)
 	char			*fmt;
 	t_field			*ret;
 
-	//FIXME blet obratotat' eto nado gdeto
+	/*
+	** FIXME blet obratotat' eto nado gdeto
+	*/
 	if (!**format)
 	{
 		ret = create_field(ft_strdup(""));
 		ret->str = ft_strdup(ret->fmt);
 		return (ret);
 	}
-
+	/*
+	** FIXME ^ vot eto pofiksit da
+	*/
 	ptr = (*format) + 1;
 	conv = 0;
 	while (!conv && *ptr)

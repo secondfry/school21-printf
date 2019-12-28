@@ -49,10 +49,11 @@ void				purge(void *ptr, ...)
 
 	ft_memdel(&ptr);
 	va_start(ap, ptr);
-	while (1) {
+	while (1)
+	{
 		tmp = va_arg(ap, void *);
 		if (!tmp)
-			break;
+			break ;
 		ft_memdel(&tmp);
 	}
 	va_end(ap);
