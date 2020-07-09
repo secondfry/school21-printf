@@ -47,7 +47,7 @@ CFLAGS = -Wall -Werror -Wextra
 DFLAGS = -MMD -MP
 IFLAGS = -I $(INCL_DIR) -I $(LIB_INCL_DIR)
 LFLAGS = -L $(LIB_DIR) -lft
-DEBUG = -g -pg
+DEBUG = -g
 SO_FLAGS = -shared -fPIC
 
 #	-----------------------------------------------------  #
